@@ -9,6 +9,10 @@
     <center><img src="Imagenes/Usu.png" ></a></center>
     <a href="Roles.jsp">    <!--  YA ESTAN EN BOTONES A ENLACE-->
     <center><img src="Imagenes/Auxi.png" ></a></center>
+    <a href="Ingresar.jsp">
+        <center><img src="Imagenes/Admin.png" ></a></center>
+
+
 </body>
 <style>
 body{
