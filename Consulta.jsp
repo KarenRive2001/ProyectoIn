@@ -40,7 +40,6 @@ ResultSet rs = null;
 <th scope="col">Tipo</th>
 <th scope="col">Peso</th>
 <th ></th>
-<th scope="col" ><a href=" Agregar.jsp"><i class="fa fa-cart-plus" aria-hidden="true"></i></a></th> <!-- Icono de carrito de compras-->
 </tr>
 </thead>
 <tbody>
