@@ -1,5 +1,9 @@
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.*"%>
+<%@page import="com.mysql.jdbc.Driver"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
-    <head>
+  <head>
         <title>Farma Mundo/Administrativo</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +21,63 @@
             Statement st = null;
             ResultSet rs = null;
 
-        %>
+        %><!--  USUARIOS--> 
     <div class="container mt-5">
         <div class="row">
             <table class="table">
                 <thead>
+                    <tr>
+                        <th scope="Col" colspan="4" >Usuarios</th>
+                        <th scope="col" > <a href="  AgregarU.jsp"><i class="fas fa-book-medical"></i></a> </th>
+                    </tr>
+                    <tr>
+                         <th scope="col">Nombre</th> <!--  Nombres para las listas --> 
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Identificacion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%             
+                        try {
+                        Class.forName("com.mysql.jdbc.Driver");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/almacen?user=root");
+                        st = conexion.createStatement();
+                        rs = st.executeQuery("Select Nombre,Apellido,Identificacion from usuarios");
+                        while (rs.next()) {
+
+                %>
+                <tr>
+                    <th><%=rs.getString(1)%></th> 
+                    <td><%=rs.getString(2)%></td>
+                    <td><%=rs.getString(3)%></td>
+                    <td>
+                        <a href="EditarU.jsp?Nombre=<%=rs.getString(1)%>&Apellido=<%=rs.getString(2)%>&Identificacion=<%=rs.getString(3)%>">
+                            <i class="fa fa-pencil" aria-hidden="true"></i></a></td>
+                </tr>
+                <%
+                        }
+                    } catch (Exception e) {
+                        out.print("Error MySQL");
+                    }
+                %> 
+                    
+            
+                </tbody>
+            </table>
+        </div>     
+    </div>
+    <!-- PRODUCTOS        PRODUCTOS            PRODUCTOS       PRUDUCTOS  PRODUCTOS PRODUCTOS   --> 
+    
+        <div class="container mt-5">
+        <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="Col" colspan="6" >Productos</th>
+                        CodigT
+                        <th scope="col"> <i class="fas fa-trash-alt"></i> <!-- Icono de Borrar--></th>
+                    </tr>
+                    </tr>
                     <tr>
                         <th scope="col">Codigo</th> 
                         <th scope="col">Nombre</th>
@@ -29,14 +85,9 @@
                         <th scope="col">Tipo</th>
                         <th scope="col">Peso</th>
                         
-                     <th scope="col" >
-                         
-                         <a href="  Agregar.jsp"><i class="fas fa-book-medical"></i></a>
-                    </th>
-                    <th scope="col" >
-  
-                         <i class="fas fa-trash-alt"></i>
-                    </th>
+                        
+
+                    
                                            
                     </tr>
                 </thead>
@@ -56,6 +107,7 @@
                     <td><%=rs.getInt(3)%></td>
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getDouble(5)%></td>
+                    
                 </tr>
                 <%
                         }
