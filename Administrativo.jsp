@@ -74,8 +74,8 @@
                 <thead>
                     <tr>
                         <th scope="Col" colspan="6" >Productos</th>
-                        CodigT
-                        <th scope="col"> <i class="fas fa-trash-alt"></i> <!-- Icono de Borrar--></th>
+                        <th scope="col" > <a href="  Agregar.jsp"><i class="fas fa-book-medical"></i></a> </th>
+                    
                     </tr>
                     </tr>
                     <tr>
