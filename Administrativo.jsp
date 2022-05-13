@@ -107,6 +107,11 @@
                     <td><%=rs.getInt(3)%></td>
                     <td><%=rs.getString(4)%></td>
                     <td><%=rs.getDouble(5)%></td>
+                    <td>
+                        <a href="EditarM.jsp?Codigo_medicamento=<%=rs.getInt(1)%>&Nombre_medicamento=<%=rs.getString(2)%>&Cantidad=<%=rs.getInt(3)%>&Tipo=<%=rs.getInt(4)%>&Peso=<%=rs.getDouble(5)%>">
+                        <i class="fas fa-trash-alt"></i></a>
+                            <a href="EliminarU.jsp?Codigo_medicamento=<%=rs.getInt(1)%>"class="ml-1"><i class="fas fa-trash-alt"></i></a> </td><!-- Icono de Borrar-->
+                            
                     
                 </tr>
                 <%
