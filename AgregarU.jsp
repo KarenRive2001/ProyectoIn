@@ -12,8 +12,6 @@
 <script src="https://kit.fontawesome.com/e0cfcdd2b0.js" crossorigin="anonymous"></script>
 </head>
 
-
-
 <body>
 <a href="index.html">
 <img src="Imagenes/Inicio.png" ></a>
