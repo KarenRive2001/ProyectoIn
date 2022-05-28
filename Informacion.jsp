@@ -46,4 +46,19 @@ Esta metodología permite abordar proyectos complejos que exigen una flexibilida
 </div>
 </div>
 </body>
+    <style>
+            body{
+                background-color:#ffe6f7;
+                 background-color:#ffcccc;
+             h5{
+        color: #fff;
+        text-align: center;
+        margin:0;
+        font-size: 30px;
+        margin-bottom: 10px;
+             
+    }
+            }
+
+        </style>
 </html>
