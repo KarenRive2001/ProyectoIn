@@ -1,6 +1,11 @@
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.*"%>
+<%@page import="com.mysql.jdbc.Driver"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-    <head>
-        <title>Farma Mundo/Administrativo</title>
+   <head>
+        <title>Farma Mundo/Auxiliar</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="estilos.css" >
@@ -31,11 +36,11 @@
                         
                      <th scope="col" >
                          
-                         <a href="  Agregar.jsp"><i class="fas fa-book-medical"></i></a>
+                         <a href="  Agregar.jsp"><i class="fas fa-book-medical"></i></a> <!--  Icono de Agregar-->
                     </th>
                     <th scope="col" >
   
-                         <i class="fas fa-trash-alt"></i>
+                         <i class="fas fa-trash-alt"></i> <!-- Icono de Borrar-->
                     </th>
                                            
                     </tr>
@@ -44,7 +49,7 @@
                     <%             
                         try {
                         Class.forName("com.mysql.jdbc.Driver");
-                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/almacen?user=root");
+                        conexion = DriverManager.getConnection("jdbc:mysql://localhost/farmacia?user=root");
                         st = conexion.createStatement();
                         rs = st.executeQuery("Select Codigo_medicamento,Nombre_medicamento,Cantidad, Tipo,Peso  From medicamentos");
                         while (rs.next()) {
